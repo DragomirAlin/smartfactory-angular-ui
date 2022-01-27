@@ -1,23 +1,20 @@
 import {KeycloakService} from "keycloak-angular";
-import {of} from "rxjs";
-import {switchMap} from "rxjs/operators";
-import {ConfigInitService} from "./config-init.service";
-import {fromPromise} from "rxjs-compat/observable/fromPromise";
+import {environment} from "../../../environments/environment";
 
 export function initializeKeycloak(
   keycloak: KeycloakService,
-  configService: ConfigInitService
-) {
+
+  ) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://192.168.49.2' + '/auth',
-        realm: "smartfactory",
-        clientId: "jwtClient",
+        url: environment.authUrl + '/auth',
+        realm: environment.realm,
+        clientId: environment.clientId,
       },
       initOptions: {
-          onLoad: 'login-required',
-          checkLoginIframe: true
+        onLoad: 'login-required',
+        checkLoginIframe: true
       }
     })
 }

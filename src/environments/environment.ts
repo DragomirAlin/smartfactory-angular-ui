@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  configFile: 'assets/config/config.dev.json'
+  configFile: 'assets/config/config.dev.json',
+  authUrl: 'http://192.168.49.2',
+  realm: 'smartfactory',
+  clientId: 'jwtClient'
 };
 
 /*
