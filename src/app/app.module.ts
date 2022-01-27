@@ -7,7 +7,7 @@ import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {initializeKeycloak} from "./services/init/keycloak-init.factory";
 import {ConfigInitService} from "./services/init/config-init.service";
 import { HttpClientModule } from '@angular/common/http';
-
+import {ApiModule} from "./services/api";
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     KeycloakAngularModule,
+    ApiModule
   ],
   providers: [
     ConfigInitService,

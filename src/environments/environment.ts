@@ -7,7 +7,8 @@ export const environment = {
   configFile: 'assets/config/config.dev.json',
   authUrl: 'http://192.168.49.2',
   realm: 'smartfactory',
-  clientId: 'jwtClient'
+  clientId: 'jwtClient',
+  api: 'http://192.168.49.4:8080'
 };
 
 /*
