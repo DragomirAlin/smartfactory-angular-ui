@@ -3,7 +3,10 @@ import {NavigationEnd, Router} from "@angular/router";
 
  enum Route {
   HOME = "/",
-  DEVICE = "/device"
+  DEVICE = "/device",
+  DATASET = "/dataset",
+  SUBSCRIPTION = "/subscription",
+  NOTIFICATION = "/notification",
 }
 
 @Component({
