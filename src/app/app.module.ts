@@ -19,6 +19,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {DeviceComponent} from "./pages/device/device.component";
 import { HomeComponent } from './pages/home/home.component';
+import { DatasetComponent } from './pages/dataset/dataset.component';
+import { SubscriptionComponent } from './pages/subscription/subscription.component';
+import { NotificationComponent } from './pages/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { HomeComponent } from './pages/home/home.component';
     HeaderComponent,
     FooterComponent,
     DeviceComponent,
-    HomeComponent
+    HomeComponent,
+    DatasetComponent,
+    SubscriptionComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
