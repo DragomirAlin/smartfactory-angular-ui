@@ -18,6 +18,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {DeviceComponent} from "./pages/device/device.component";
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {DeviceComponent} from "./pages/device/device.component";
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
-    DeviceComponent
+    DeviceComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
