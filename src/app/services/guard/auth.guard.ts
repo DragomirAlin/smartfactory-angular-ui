@@ -8,7 +8,7 @@ import { KeycloakAuthGuard, KeycloakService } from 'keycloak-angular';
 export class AuthGuard extends KeycloakAuthGuard {
 
   constructor(
-    protected readonly router: Router,
+    protected override readonly router: Router,
     protected readonly keycloak: KeycloakService
   ) {
     super(router, keycloak);

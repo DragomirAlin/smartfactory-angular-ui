@@ -6,19 +6,39 @@ import {AppComponent} from './app.component';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {initializeKeycloak} from "./services/init/keycloak-init.factory";
 import {ConfigInitService} from "./services/init/config-init.service";
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {ApiModule} from "./services/api";
+import {SidebarComponent} from './components/sidebar/sidebar.component';
+import {HeaderComponent} from './components/header/header.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {DeviceComponent} from "./pages/device/device.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidebarComponent,
+    HeaderComponent,
+    FooterComponent,
+    DeviceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     KeycloakAngularModule,
-    ApiModule
+    ApiModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [
     ConfigInitService,
