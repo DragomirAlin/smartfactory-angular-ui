@@ -86,7 +86,7 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page" routerLink="">
+        <a href="#" class="nav-link" [ngClass]="{'active': currentRoute === route.HOME.toString()}" aria-current="page" routerLink="">
           <svg class="bi me-2" width="16" height="16">
             <use xlink:href="#home"/>
           </svg>
@@ -94,7 +94,7 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-dark" routerLink="device">
+        <a href="#" class="nav-link" [ngClass]="{'active': currentRoute === route.DEVICE.toString()}" routerLink="device">
           <svg class="bi me-2" width="16" height="16">
             <use xlink:href="#speedometer2"/>
           </svg>
@@ -106,7 +106,7 @@
           <svg class="bi me-2" width="16" height="16">
             <use xlink:href="#table"/>
           </svg>
-          Orders
+          Dataset
         </a>
       </li>
       <li>
@@ -114,7 +114,7 @@
           <svg class="bi me-2" width="16" height="16">
             <use xlink:href="#grid"/>
           </svg>
-          Products
+          Subscription
         </a>
       </li>
       <li>
@@ -122,7 +122,7 @@
           <svg class="bi me-2" width="16" height="16">
             <use xlink:href="#people-circle"/>
           </svg>
-          Customers
+          Notification
         </a>
       </li>
     </ul>
