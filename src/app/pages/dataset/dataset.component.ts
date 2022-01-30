@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AcquisitionService, Data} from "../../services/api";
 
 @Component({
   selector: 'app-dataset',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dataset.component.scss']
 })
 export class DatasetComponent implements OnInit {
+  dataset: Data[] = [];
 
-  constructor() { }
+  constructor(private acquisitionService: AcquisitionService) {
+  }
 
   ngOnInit(): void {
+    this.acquisitionService.getData().subscribe((response => this.dataset = response))
   }
 
 }

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
+import {KeycloakService} from "keycloak-angular";
 
  enum Route {
   HOME = "/",
@@ -18,7 +19,7 @@ export class SidebarComponent implements OnInit {
   readonly route = Route;
   currentRoute: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private keycloakService: KeycloakService) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         // event is an instance of NavigationEnd, get url!
@@ -28,8 +29,13 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.router.url);
   }
+
+  public isAuthenticated() {
+    return this.keycloakService.isLoggedIn();
+  }
+
+
 
 
 }
