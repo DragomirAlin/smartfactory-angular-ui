@@ -22,6 +22,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { DatasetComponent } from './pages/dataset/dataset.component';
 import { SubscriptionComponent } from './pages/subscription/subscription.component';
 import { NotificationComponent } from './pages/notification/notification.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatInputModule} from "@angular/material/input";
+import {MatSortModule} from "@angular/material/sort";
 
 @NgModule({
   declarations: [
@@ -46,7 +51,12 @@ import { NotificationComponent } from './pages/notification/notification.compone
     MatListModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     ConfigInitService,

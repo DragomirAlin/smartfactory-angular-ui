@@ -8,6 +8,7 @@ import {AcquisitionService, Data} from "../../services/api";
 })
 export class DatasetComponent implements OnInit {
   dataset: Data[] = [];
+  displayedColumns = ["topic", "payload", "metadata"];
 
   constructor(private acquisitionService: AcquisitionService) {
   }

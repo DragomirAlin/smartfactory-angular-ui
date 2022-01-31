@@ -1,1 +1,24 @@
-<p>dataset works!</p>
+<mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataset">
+
+  <ng-container matColumnDef="seqNo">
+    <div *matHeaderCellDef>Topic</div>
+    <div *matCellDef="let data">{{data.topic}}</div>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <div *matHeaderCellDef>Payload</div>
+    <div class="description-cell"
+         *matCellDef="let data">Payload</div>
+  </ng-container>
+
+  <ng-container matColumnDef="duration">
+    <div *matHeaderCellDef>Metadata</div>
+    <div class="duration-cell"
+         *matCellDef="let data"> metadata</div>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>
