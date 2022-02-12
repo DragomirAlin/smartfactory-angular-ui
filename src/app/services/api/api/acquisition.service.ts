@@ -27,6 +27,7 @@ import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables'
 import { Configuration }                                     from '../configuration';
 
 import {environment} from "../../../../environments/environment";
+import {Pagination} from "../model/pagination";
 
 @Injectable()
 export class AcquisitionService {
@@ -66,9 +67,9 @@ export class AcquisitionService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getData(observe?: 'body', reportProgress?: boolean): Observable<Array<Data>>;
-    public getData(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Array<Data>>>;
-    public getData(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Array<Data>>>;
+    public getData(observe?: 'body', reportProgress?: boolean): Observable<Pagination>;
+    public getData(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Pagination>>;
+    public getData(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Pagination>>;
     public getData(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
@@ -94,7 +95,7 @@ export class AcquisitionService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.request<Array<Data>>('get',`${this.basePath}/acquisition/mqtt/data`,
+        return this.httpClient.request<Pagination>('get',`${this.basePath}/acquisition/mqtt/data`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,

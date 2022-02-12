@@ -1,24 +1,40 @@
-<mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataset">
+<div class="dataset">
+  <mat-form-field>
+    <input matInput placeholder="Search payload" #input>
+  </mat-form-field>
 
-  <ng-container matColumnDef="seqNo">
-    <div *matHeaderCellDef>Topic</div>
-    <div *matCellDef="let data">{{data.topic}}</div>
-  </ng-container>
+  <div class="spinner-container" *ngIf="dataSource.loading$">
+    <mat-spinner></mat-spinner>
+  </div>
 
-  <ng-container matColumnDef="description">
-    <div *matHeaderCellDef>Payload</div>
-    <div class="description-cell"
-         *matCellDef="let data">Payload</div>
-  </ng-container>
+  <mat-table class="dataset-table mat-elevation-z8" [dataSource]="dataSource"
+             matSort matSortActive="seqNo" matSortDirection="asc" matSortDisableClear>
 
-  <ng-container matColumnDef="duration">
-    <div *matHeaderCellDef>Metadata</div>
-    <div class="duration-cell"
-         *matCellDef="let data"> metadata</div>
-  </ng-container>
+    <ng-container matColumnDef="topic">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Topic</mat-header-cell>
+      <mat-cell *matCellDef="let dataset">{{dataset.topic}}</mat-cell>
+    </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <ng-container matColumnDef="payload">
+      <mat-header-cell *matHeaderCellDef>Payload</mat-header-cell>
+      <mat-cell class="payload-cell"
+                *matCellDef="let dataset">{{dataset.payload}}</mat-cell>
+    </ng-container>
 
-  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    <ng-container matColumnDef="metadata">
+      <mat-header-cell *matHeaderCellDef>Metadata</mat-header-cell>
+      <mat-cell class="metadata-cell"
+                *matCellDef="let dataset">{{dataset.metadata}}</mat-cell>
+    </ng-container>
 
-</mat-table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+  </mat-table>
+
+
+</div>
+
+
+
+

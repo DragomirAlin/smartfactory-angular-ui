@@ -3,6 +3,7 @@ import {Observable, BehaviorSubject, of} from "rxjs";
 
 import {catchError, finalize} from "rxjs/operators";
 import {AcquisitionService, Data} from "../api";
+import {Pagination} from "../api/model/pagination";
 
 
 export class DatasetDatasource implements DataSource<Data> {
@@ -21,7 +22,9 @@ export class DatasetDatasource implements DataSource<Data> {
       catchError(() => of([])),
       finalize(() => this.loadingSubject.next(false))
     )
-      .subscribe(lessons => this.dataSubject.next(lessons));
+      .subscribe((response: any) => {
+        this.dataSubject.next(response.data)
+      });
 
   }
 
