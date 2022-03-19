@@ -18,7 +18,7 @@ export class DatasetDatasource implements DataSource<Data> {
   loadDataset() {
     this.loadingSubject.next(true);
 
-    this.acquisitionService.getData().pipe(
+    this.acquisitionService.getData(0, 5).pipe(
       catchError(() => of([])),
       finalize(() => this.loadingSubject.next(false))
     )

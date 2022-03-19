@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "bootstrap": "^5.0.0-alpha1",
+    "bootstrap-icons": "^1.8.1",
     "jquery": "^3.6.0",
     "keycloak-angular": "^9.1.0",
     "keycloak-js": "^16.1.1",

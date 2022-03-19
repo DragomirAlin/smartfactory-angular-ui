@@ -1,13 +1,7 @@
 
 .dataset {
   text-align: center;
-
-}
-
-.course-thumbnail {
-  width: 150px;
-  margin: 20px auto 0 auto;
-  display: block;
+  margin-bottom: 100px;
 }
 
 .payload-cell {
@@ -16,19 +10,14 @@
 }
 
 .metadata-cell {
-  text-align: center;
-}
-
-.duration-cell mat-icon {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 20px;
+  margin-top: 5px;
+  text-align: left;
 }
 
 .spinner-container {
   height: 360px;
   width: 390px;
-  position: fixed;
+  align-items: center;
 }
 
 .dataset-table {
@@ -38,4 +27,12 @@
 
 .spinner-container mat-spinner {
   margin: 130px auto 0 auto;
+}
+
+.table-header {
+  background-color: lightgray;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: larger;
+  text-align: center;
+  align-content: center;
 }
