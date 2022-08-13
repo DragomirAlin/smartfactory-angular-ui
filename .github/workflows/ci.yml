@@ -1,10 +1,14 @@
-name: UI CI
+name: Smartfactory UI CI
 on:
   push:
     branches:
-      - "!*"
+      - main
+      - 'releases/**'
     tags:
-      - "v*"
+      - '*'
+  pull_request:
+    branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
