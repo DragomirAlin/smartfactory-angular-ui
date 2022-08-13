@@ -1,4 +1,7 @@
 export const environment = {
   production: false,
-  configFile: 'assets/config/config.dev.json'
+  authUrl: "https://id.dragomiralin.ro/auth/",
+  realm: "smartfactory",
+  clientId: "jwtClient",
+  api: "https://api.dragomiralin.ro/api/v1/"
 };
